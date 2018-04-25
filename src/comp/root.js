@@ -56,7 +56,6 @@ class Root extends React.Component {
 	}
 
 	getChange(values) {
-		console.log('getChange',values)
 		let current = this.state.direction ? values.leftSelect : values.rightSelect,
 			target = !this.state.direction ? values.leftSelect : values.rightSelect,
 			count = this.state.direction ? values.leftCount : values.rightCount,
@@ -93,7 +92,6 @@ class Root extends React.Component {
 
 
 	render() {
-		console.log('count list: ',this._list.length)
 		return (
 			<div className="Root">
 				<hr style={{marginBottom:20}}/>
@@ -124,7 +122,7 @@ class Root extends React.Component {
 }
 
 export default connect(
-		state => state.change,
+		state => ({...state.change}),
 		disp => ({
 			getList : () => disp({type : '@get:list'}),
 			initForm : () => disp(initialize('coins',{

@@ -7,7 +7,6 @@ const parseNumber = (num,num2) => {
 
 
 export default (values,i,q,w) => {
-	console.log('validate',values,i,q,w)
 	return {
 		leftCount : parseNumber(values.leftCount, values.rightCount),
 		rightCount : parseNumber(values.rightCount, values.leftCount),
